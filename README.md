@@ -3,6 +3,7 @@
 ## Project Planning
 
 ![wireframe](./assets/wireframe.jpeg)
+_left: on home page load; right: on detail page load_
 
 ### HTML
 
