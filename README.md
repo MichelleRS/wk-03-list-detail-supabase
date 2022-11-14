@@ -1,27 +1,49 @@
-## The Golden Rule:
+# Herbal Directory
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+## Project Planning
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
+![wireframe](./assets/wireframe.jpeg)
 
-## Making a plan
+### HTML
 
-1. **Make a drawing of your app. Simple "wireframes"**
-1. **Look at the drawing and name the HTML elements you'll need to realize your vision**
-1. **Look at the drawing and imagine using the app. What _state_ do you need to track?**
-1. **For each HTML element ask: Why do I need this? (i.e., "we need div to display the results in")**
-1. **Once we know _why_ we need each element, think about how to implement the "Why" as a "How" (i.e., `resultsEl.textContent = newResults`)**
-1. **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change? Does any DOM update?**
-1. **Think about how to validate each of your features according to a Definition of Done. (Hint: console.log usually helps here.)**
-1. **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+-   `header > h1 `
+-   `main > section.info > ul #herbs-container`
+    -   use empty `ul` for rendered herb cards rendered as `li`
 
-Additional considerations:
+### Events
 
--   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
--   Consider your data model.
-    -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
-    -   What are the key/value pairs?
-    -   What arrays might you need?
-    -   What needs to live in a persistence layer?
--   Is there some state we need to initialize?
--   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+-   on home page load:
+    -   fetch all items from Supabase
+    -   display all items (loop, render, append to container)
+-   on detail page load:
+    -   fetch single item from Supabase (by id)
+    -   render to page based on item info
+    -   use URLSearchParams to get item id
+
+### Functions
+
+-   fetch-utils:
+    -   getAllHerbs, getHerb
+-   render-utils:
+    -   renderHerbCard, renderHerbDetail
+
+## Workflow
+
+### Slice 1 - HTML
+
+-   Build HTML
+-   Get DOM elements
+
+### Slice 2 - Get info from Supabase
+
+-   index.html > script tag BEFORE app.js
+-   URL and Key in fetch
+-   Make fetch-utils.js
+    -   const URL
+    -   const key
+    -   create client
+    -   async/await getAllHerbs()
+-   In app.js:
+    -   addEventListener to getAllHerbs on page load
+
+_... more slices to be added_
