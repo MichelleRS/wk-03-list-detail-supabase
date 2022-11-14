@@ -1,6 +1,7 @@
 /* Imports */
 
 /* Get DOM Elements */
+const herbsContainer = document.querySelector('#herbs-container');
 
 /* State */
 
