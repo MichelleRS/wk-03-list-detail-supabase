@@ -38,13 +38,14 @@ _left: on home page load; right: on detail page load_
 
 ### Slice 2 - Get info from Supabase
 
--   URL and Key in fetch
--   Make fetch-utils.js
+-   [x] Make fetch-utils.js
     -   const URL
     -   const key
     -   create client
     -   async/await getAllHerbs()
--   In app.js:
-    -   addEventListener to getAllHerbs on page load
+-   [x] In app.js:
+    -   addEventListener on home page for getAllHerbs()
+-   [] Create render-utils and create renderHerbCard()
+-   [] In app.jas, complete addEventListener with loop, render, append to display data
 
 _... more slices to be added_
