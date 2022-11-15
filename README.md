@@ -32,12 +32,12 @@ _left: on home page load; right: on detail page load_
 
 ### Slice 1 - HTML
 
--   Build HTML
--   Get DOM elements
+-   [x] Build HTML
+    -   add Supabase render script BEFORE app.js
+-   [x] Get DOM elements
 
 ### Slice 2 - Get info from Supabase
 
--   index.html > script tag BEFORE app.js
 -   URL and Key in fetch
 -   Make fetch-utils.js
     -   const URL
