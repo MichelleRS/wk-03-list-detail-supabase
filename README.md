@@ -36,7 +36,7 @@ _left: on home page load; right: on detail page load_
     -   add Supabase render script BEFORE app.js
 -   [x] Get DOM elements
 
-### Slice 2 - Get info from Supabase
+### Slice 2 - Get info from Supabase and display herbs on home page
 
 -   [x] Make fetch-utils.js
     -   const URL
@@ -46,6 +46,38 @@ _left: on home page load; right: on detail page load_
 -   [x] In app.js:
     -   addEventListener on home page for getAllHerbs()
 -   [x] Create render-utils and create renderHerbCard()
--   [x] In app.jas, complete addEventListener with loop, render, append to display data
+-   [x] In app.js, complete addEventListener with loop, render, append to display data
 
-_... more slices to be added_
+### Slice 3 - Make herbs on home page clickable and display a unique detail page for each herb
+
+-   [x] set up a folder called herb with these files:
+
+    -   herb.js
+    -   index.html
+
+-   [x] in new index.html:
+
+    -   paste original html into it
+    -   IMPORTANT: change paths
+        -   src from app.js to game.js
+        -   css (ex: "../styles/reset.css")
+    -   in `header`, add link to home page
+    -   add a `section` with `div#herb-detail-container`
+
+-   [x] in render-utils.js, add href to renderHerbCard
+
+-   [x] in fetch-utils.js, create an async/await function for each detail page - getHerb(id) and return response.data
+
+-   [x] in herb.js, begin event listener for on page load
+
+-   [x] in render-utils.js, add renderHerbDetail(herb) and include:
+
+    -   herbObject.name, herbObject.energetics, herbObject.actions
+
+-   [x] in herb.js:
+    -   get DOM element for herb-detail-container
+    -   add on to event listener:
+        -   render and append
+        -   at start, add URLSearchParams and create an id variable to get id
+
+### Slice 4 - Add CSS
