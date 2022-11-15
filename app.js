@@ -1,11 +1,16 @@
 /* Imports */
 
+import { getAllHerbs } from './fetch-utils.js';
+
 /* Get DOM Elements */
 const herbsContainer = document.querySelector('#herbs-container');
 
 /* State */
 
 /* Events */
+window.addEventListener('load', async () => {
+    const herbs = await getAllHerbs();
+});
 
 /* Display Functions */
 
