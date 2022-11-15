@@ -10,12 +10,16 @@ export function renderHerbCard(herb) {
     titleEl.textContent = herb.name;
 
     // add link to detail page
+    aEl.href = `./herb/?id=${herb.id}`;
 
     // append titleEl to divEl
     divEl.append(titleEl);
 
     // append divEl to aEl
+    aEl.append(divEl);
+
+    console.log(aEl);
 
     // return divEl
-    return divEl;
+    return aEl;
 }
