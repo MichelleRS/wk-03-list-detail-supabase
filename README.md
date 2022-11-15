@@ -80,4 +80,10 @@ _left: on home page load; right: on detail page load_
         -   render and append
         -   at start, add URLSearchParams and create an id variable to get id
 
-### Slice 4 - Add CSS
+### Slice 4 - Add CSS to home page
+
+-   [x] Layout with flexbox and begin to style colors
+-   [] Style text
+-   [] Add an image to left of cards or in header
+
+### Slice 5 - Add CSS to detail page
