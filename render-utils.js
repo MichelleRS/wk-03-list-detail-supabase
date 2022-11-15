@@ -38,11 +38,11 @@ export function renderHerbDetail(herb) {
     nameEl.classList.add('name');
 
     // energetics
-    energeticsEl.textContent = herb.energetics;
+    energeticsEl.textContent = `Energetics: ${herb.energetics}`;
     energeticsEl.classList.add('energetics');
 
     // actions
-    actionsEl.textContent = herb.actions;
+    actionsEl.textContent = `Actions: ${herb.actions}`;
     actionsEl.classList.add('actions');
 
     // append all elements to div
