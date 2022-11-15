@@ -11,3 +11,9 @@ export async function getAllHerbs() {
 
     return response.data;
 }
+
+export async function getHerb(id) {
+    const response = await client.from('herbs').select().match({ id: id }).single;
+
+    return response.data;
+}
