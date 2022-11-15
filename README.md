@@ -45,7 +45,7 @@ _left: on home page load; right: on detail page load_
     -   async/await getAllHerbs()
 -   [x] In app.js:
     -   addEventListener on home page for getAllHerbs()
--   [] Create render-utils and create renderHerbCard()
--   [] In app.jas, complete addEventListener with loop, render, append to display data
+-   [x] Create render-utils and create renderHerbCard()
+-   [x] In app.jas, complete addEventListener with loop, render, append to display data
 
 _... more slices to be added_
