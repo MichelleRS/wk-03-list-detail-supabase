@@ -1,11 +1,11 @@
 export function renderHerbCard(herb) {
     // create elements to be rendered
-    const divEl = document.createElement('div');
+    // const divEl = document.createElement('div');
     const aEl = document.createElement('a');
     const titleEl = document.createElement('p');
 
     // to div, add class of .herb-card
-    divEl.classList.add('herb-card');
+    aEl.classList.add('herb-card');
 
     // display title for herb name
     titleEl.textContent = herb.name;
@@ -14,12 +14,10 @@ export function renderHerbCard(herb) {
     aEl.href = `./herb/?id=${herb.id}`;
 
     // append titleEl to divEl
-    divEl.append(titleEl);
+    // divEl.append(titleEl);
 
     // append divEl to aEl
-    aEl.append(divEl);
-
-    console.log(aEl);
+    aEl.append(titleEl);
 
     // return divEl
     return aEl;
