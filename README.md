@@ -1,27 +1,89 @@
-## The Golden Rule:
+# Herbal Directory
 
-🦸 🦸‍♂️ `Stop starting and start finishing.` 🏁
+## Project Planning
 
-If you work on more than one feature at a time, you are guaranteed to multiply your bugs and your anxiety.
+![wireframe](./assets/wireframe.jpeg)
+_left: on home page load; right: on detail page load_
 
-## Making a plan
+### HTML
 
-1. **Make a drawing of your app. Simple "wireframes"**
-1. **Look at the drawing and name the HTML elements you'll need to realize your vision**
-1. **Look at the drawing and imagine using the app. What _state_ do you need to track?**
-1. **For each HTML element ask: Why do I need this? (i.e., "we need div to display the results in")**
-1. **Once we know _why_ we need each element, think about how to implement the "Why" as a "How" (i.e., `resultsEl.textContent = newResults`)**
-1. **Find all the 'events' (user clicks, form submit, on load etc) in your app. Ask one by one, "What happens when" for each of these events. Does any state change? Does any DOM update?**
-1. **Think about how to validate each of your features according to a Definition of Done. (Hint: console.log usually helps here.)**
-1. **Consider what features _depend_ on what other features. Use this dependency logic to figure out what order to complete tasks.**
+-   `header > h1 `
+-   `main > section.info > ul #herbs-container`
+    -   use empty `ul` for rendered herb cards rendered as `li`
 
-Additional considerations:
+### Events
 
--   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
--   Consider your data model.
-    -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
-    -   What are the key/value pairs?
-    -   What arrays might you need?
-    -   What needs to live in a persistence layer?
--   Is there some state we need to initialize?
--   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+-   on home page load:
+    -   fetch all items from Supabase
+    -   display all items (loop, render, append to container)
+-   on detail page load:
+    -   fetch single item from Supabase (by id)
+    -   render to page based on item info
+    -   use URLSearchParams to get item id
+
+### Functions
+
+-   fetch-utils:
+    -   getAllHerbs, getHerb
+-   render-utils:
+    -   renderHerbCard, renderHerbDetail
+
+## Workflow
+
+### Slice 1 - HTML
+
+-   [x] Build HTML
+    -   add Supabase render script BEFORE app.js
+-   [x] Get DOM elements
+
+### Slice 2 - Get info from Supabase and display herbs on home page
+
+-   [x] Make fetch-utils.js
+    -   const URL
+    -   const key
+    -   create client
+    -   async/await getAllHerbs()
+-   [x] In app.js:
+    -   addEventListener on home page for getAllHerbs()
+-   [x] Create render-utils and create renderHerbCard()
+-   [x] In app.js, complete addEventListener with loop, render, append to display data
+
+### Slice 3 - Make herbs on home page clickable and display a unique detail page for each herb
+
+-   [x] set up a folder called herb with these files:
+
+    -   herb.js
+    -   index.html
+
+-   [x] in new index.html:
+
+    -   paste original html into it
+    -   IMPORTANT: change paths
+        -   src from app.js to game.js
+        -   css (ex: "../styles/reset.css")
+    -   in `header`, add link to home page
+    -   add a `section` with `div#herb-detail-container`
+
+-   [x] in render-utils.js, add href to renderHerbCard
+
+-   [x] in fetch-utils.js, create an async/await function for each detail page - getHerb(id) and return response.data
+
+-   [x] in herb.js, begin event listener for on page load
+
+-   [x] in render-utils.js, add renderHerbDetail(herb) and include:
+
+    -   herbObject.name, herbObject.energetics, herbObject.actions
+
+-   [x] in herb.js:
+    -   get DOM element for herb-detail-container
+    -   add on to event listener:
+        -   render and append
+        -   at start, add URLSearchParams and create an id variable to get id
+
+### Slice 4 - Add CSS to home page
+
+-   [x] Layout with flexbox and begin to style colors
+-   [] Style text
+-   [] Add an image to left of cards or in header
+
+### Slice 5 - Add CSS to detail page
