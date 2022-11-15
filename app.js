@@ -3,7 +3,7 @@
 import { getAllHerbs } from './fetch-utils.js';
 
 /* Get DOM Elements */
-const herbsContainer = document.querySelector('#herbs-container');
+const herbsListContainer = document.querySelector('#herbs-list-container');
 
 /* State */
 
